@@ -52,7 +52,7 @@ const CocktailList = () => {
   const [cocktails, setCocktails] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 20;
+  const itemsPerPage = 10;
 
   useEffect(() => {
     fetchData(currentPage);

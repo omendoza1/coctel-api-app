@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Aplicación de Cócteles 🍹
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta aplicación permite a los usuarios explorar diferentes cócteles, ver sus imágenes y obtener información básica sobre ellos. Está construida con React y utiliza la API de [TheCocktailDB](https://www.thecocktaildb.com/api.php).
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- Lista de cócteles con imágenes y nombres
+- Tarjetas interactivas que muestran detalles al hacer clic
+- Diseño responsive para dispositivos móviles y de escritorio
 
-### `npm start`
+## Instalación y uso
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Para instalar y ejecutar la aplicación, sigue estos pasos:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clona el repositorio:
 
-### `npm test`
+git clone https://github.com/omendoza1/coctel-api-app.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navega a la carpeta del proyecto:
 
-### `npm run build`
+cd coctel-api-app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Instala las dependencias:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+yarn install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Inicia la aplicación en modo de desarrollo:
 
-### `npm run eject`
+yarn start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+La aplicación se abrirá automáticamente en tu navegador en `http://localhost:3000`. Los cambios en el código se actualizarán automáticamente.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tecnologías utilizadas
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [React](https://reactjs.org/)
+- [Material-UI](https://mui.com/)
+- [TheCocktailDB API](https://www.thecocktaildb.com/api.php)
+- [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contribuciones
 
-## Learn More
+Las contribuciones son bienvenidas. Si tienes alguna idea para mejorar la aplicación o solucionar un problema, no dudes en abrir un issue o enviar un pull request.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Licencia
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo `LICENSE` para obtener más información.

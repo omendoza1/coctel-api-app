@@ -12,3 +12,16 @@ root.render(
 );
 
 reportWebVitals();
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready.then(() => {
+    navigator.serviceWorker
+      .register('../sw.js')
+      .then((registration) => {
+        console.log('Service Worker registrado con éxito:', registration);
+      })
+      .catch((error) => {
+        console.log('Error en el registro del Service Worker:', error);
+      });
+  });
+}

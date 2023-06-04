@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import {
   Card,
   CardContent,
-  CardMedia,
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/system';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { deepPurple } from '@mui/material/colors';
+
+const placeholderImage = 'data:image/png;base64,iVBORw0KG...';
 
 const ThinCard = ({ cocktail }) => {
   const StyledCard = styled(Card)`
@@ -30,21 +31,20 @@ const ThinCard = ({ cocktail }) => {
 
   return (
     <StyledCard>
-      <CardMedia
-        component={() => (
-          <LazyLoadImage
-            alt={cocktail.strDrink}
-            effect="blur"
-            height={140}
-            src={
-              cocktail.strDrinkThumb ||
-              'https://via.placeholder.com/150'
-            }
-            width="100%"
-            wrapperClassName="image-wrapper"
-          />
-        )}
-        sx={{ height: 140 }}
+      <LazyLoadImage
+        alt={cocktail.strDrink}
+        effect="blur"
+        height={140}
+        src={cocktail.strDrinkThumb || placeholderImage}
+        width="100%"
+        wrapperClassName="image-wrapper"
+        placeholderSrc={placeholderImage}
+        style={{
+          display: 'block',
+          objectFit: 'cover',
+          width: '100%',
+          height: 140,
+        }}
       />
       <CardContent>
         <CocktailTitle variant="h6">

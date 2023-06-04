@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
   Box,
-  Button,
   CircularProgress,
   Container,
   Grid,
-  Typography
+  Typography,
+  Pagination
 } from '@mui/material';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
@@ -18,6 +18,7 @@ const CocktailList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const itemsPerPage = 10;
 
   useEffect(() => {
@@ -26,6 +27,8 @@ const CocktailList = () => {
 
   const fetchData = async (page) => {
     try {
+      setLoading(true);
+      setError(null);
       const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
 
       if (response.data.drinks) {
@@ -41,15 +44,13 @@ const CocktailList = () => {
       }
     } catch (error) {
       setError(error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handlePreviousPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
-
-  const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  const handleChangePage = (event, newPage) => {
+    setCurrentPage(newPage);
   };
 
   return (
@@ -73,8 +74,10 @@ const CocktailList = () => {
                 </Grid>
               ))}
             </Grid>
-          ) : (
+          ) : loading ? (
             <CircularProgress />
+          ) : (
+            <Typography>No hay cócteles disponibles</Typography>
           )}
           <Box
             display="flex"
@@ -82,23 +85,15 @@ const CocktailList = () => {
             alignItems="center"
             marginTop={2}
           >
-            <Button
-              onClick={handlePreviousPage}
-              disabled={currentPage === 1}
-              variant="contained"
-            >
-              Anterior
-            </Button>
-            <Typography mx={1}>
-              Página {currentPage} de {totalPages}
-            </Typography>
-            <Button
-              onClick={handleNextPage}
-              disabled={currentPage === totalPages}
-              variant="contained"
-            >
-              Siguiente
-            </Button>
+            <Pagination
+              count={totalPages}
+              page={currentPage}
+              onChange={handleChangePage}
+              color="primary"
+              size="large"
+              showFirstButton
+              showLastButton
+            />
           </Box>
         </Box>
       </Container>
